@@ -1,0 +1,55 @@
+#ifndef student_h
+#define student_h
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+class student
+{
+    private:
+        std::string FirstName;
+        std::string LastName;
+        std::vector <int> pazymiai;
+        int egz;
+        double Finale_suVidurkiu;
+        double Finale_suMediana;
+        int Med_ar_Vid;
+        bool CorrectData;
+
+    public:
+        student();
+
+        void setFirstName(std::string x);
+        std::string getFirstName()const;
+
+        void setLastName(std::string x);
+        std::string getLastName()const;
+
+        void set_egz(int exam_mark);
+        int get_egz()const;
+
+        void set_mark(double mark);
+        int get_mark(int a);
+        void ClearMark();
+
+        double getFinale_suVidurkiu()const;
+        double getFinale_suMediana()const;
+
+        double Calculate_suVidurkiu();
+        double Calculate_suMediana();
+
+        void set_Med_ar_Vid(int choice);
+        int get_Med_ar_Vid();
+
+        bool setCorrectData(bool x);
+        bool getCorrectData();
+
+};
+
+bool Compare_by_Results(const student &a, const student &b);
+bool Compare_by_FirstName(const student &a, const student &b);
+bool Ar_Islaike (student &a);
+
+
+#endif
