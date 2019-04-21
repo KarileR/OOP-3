@@ -9,12 +9,15 @@ __Programos naudojimosi instrukcija__
 
 # v1.1
 __Pridėta:__
-- Išmatuota programos veikimo sparta priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3.
+- Išmatuota programos veikimo sparta priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3
+- Išmatuota programos veikimo sparta priklausomai nuo class ir struct
+
 
 __Koreguota:__
 - Struktūra pakeista į klasę
 - Pakeista 'validate input' funkcijos į vieną bendrą klasę
 - Palikta kompiliuoti programą su 3 optimizavimo flag'u, atsižvelgiant į atliktą spartos analizę
+- Palikta vykdyti programą su klasėmis vietoj struktūrų, atsižvelgiant į atliktą spartos analizę
 
 
 __Spartos analizė:__
