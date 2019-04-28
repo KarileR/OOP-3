@@ -102,9 +102,9 @@ int student::get_Med_ar_Vid(){
     return Med_ar_Vid;
 }
 
-bool Compare_by_FirstName(const student& a, const student& b) 
+bool Compare_by_FirstName(const student &a, const student &b) 
 {
-    return a.getFirstName() < b.getLastName();
+    return a.getFirstName() < b.getFirstName();
 }
 
 bool Compare_by_Results(const student &a, const student &b) 
