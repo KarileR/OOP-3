@@ -7,6 +7,11 @@ __Programos naudojimosi instrukcija__
     - Trečia: Pasirinkti įvesti duomenis ranka programos veikimo metu
 2. Po kiekvieno pasirinkimo sekate nurodymus, ką reikia daryti toliau. Jei išmeta klaidą,  ji bus aprašyta, kodėl taip įvyko
 
+# v1.2
+__Pridėta:__
+- Realizuoti operatoriai 'student' klasei
+
+
 # v1.1
 __Pridėta:__
 - Išmatuota programos veikimo sparta priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3
