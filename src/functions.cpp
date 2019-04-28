@@ -8,63 +8,15 @@ std::string ListNR;
 void InsertYourself(list <student> &A)
 {
         cout << "Iveskite mokiniu skaiciu: ";
-        int sk = Console::GetInteger(1,imax); 
-        cout << endl;
+        int sk = Console::GetInteger(1,imax);
 
         student z;
 
-        string FirstName;
-        string LastName;
-        int pazymys;
-        int egz;
-        int Med_ar_Vid;
-
-
-        for(int i=1; i <= sk; i++)
+        for (int i=1; i<=sk; i++)
         {
-            z.ClearMark();
-
-            cout << "Iveskite " << i << "-ojo mokinio duomenis" << endl;
-
-            cout << "Vardas: "; 
-            cin >> FirstName;
-            z.setFirstName(FirstName);
-
-            cout << "Pavarde: ";
-            cin >> LastName;
-            z.setLastName(LastName);
             cout << endl;
-    
-            cout << "Pradekite vesti mokinio pazymius. Kai baigsite iveskite 0. " << endl;
-            int j=1;
-
-            while(true)
-            {
-                cout << j <<"-uju namu darbu rezultatas: ";
-                pazymys = Console::GetInteger(0,10);
-
-                if (pazymys == 0) break;
-                else
-                {
-                    z.set_mark(pazymys);
-                    j++;
-                }
-            }
-
-            cout << "Egzamino rezultatai: ";
-            egz = Console::GetInteger(1,10);
-            z.set_egz(egz);
-            cout << endl;
-
-            cout << "Pasirinkite skaiciuoti su mediana (1), vidurkiu (2), arba su abiem (3): ";
-            Med_ar_Vid = Console::GetInteger(1,3);
-            z.set_Med_ar_Vid(Med_ar_Vid);
-
-            z.Calculate_suMediana();
-            z.Calculate_suVidurkiu();
-
-            cout << endl;
-            cout << endl;
+            cout << "Iveskite " << i << " -ojo mokinio duomenis:" << endl;
+            cin >> z;
             A.push_back(z);
         }
 }

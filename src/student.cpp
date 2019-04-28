@@ -1,4 +1,6 @@
 #include "../headers/student.h"
+#include "../headers/console.h"
+
 
 
 student::student()
@@ -107,10 +109,97 @@ bool Compare_by_FirstName(const student& a, const student& b)
 
 bool Compare_by_Results(const student &a, const student &b) 
 {
-    return a.getFinale_suVidurkiu() > b.getFinale_suVidurkiu();
+    return a > b;
 }
 
 bool Ar_Islaike (student &a) 
 {
     return (a.getFinale_suVidurkiu() >= 5);
+}
+
+//Operatoriai
+
+bool operator > (const student &a, const student &b)
+{
+    return a.getFinale_suVidurkiu() > b.getFinale_suVidurkiu();
+}
+bool operator < (const student &a, const student &b)
+{
+    return a.getFinale_suVidurkiu() < b.getFinale_suVidurkiu();
+}
+
+bool operator >= (const student &a, const student &b)
+{
+    return a.getFinale_suVidurkiu() >= b.getFinale_suVidurkiu();
+}
+bool operator <= (const student &a, const student &b)
+{
+    return a.getFinale_suVidurkiu() <= b.getFinale_suVidurkiu();
+}
+
+bool operator == (const student &a, const student &b) 
+{ 
+    return a.getFinale_suVidurkiu() == b.getFinale_suVidurkiu(); 
+}
+bool operator != (const student &a, const student &b) 
+{ 
+    return a.getFinale_suVidurkiu() != b.getFinale_suVidurkiu(); 
+}
+
+
+std::istream& operator >> (std::istream& in, student &a)
+{
+
+    std::cout << "Vardas: "; 
+    in >> a.FirstName;
+
+    std::cout << "Pavarde: ";
+    in >> a.LastName;
+    
+    std::cout << std::endl;
+    
+    std::cout << "Pradekite vesti mokinio pazymius. Kai baigsite iveskite 0. " << std::endl;
+    int j=1; int pazymys;
+
+    while(true)
+    {
+        std::cout << j <<"-uju namu darbu rezultatas: ";
+        pazymys = Console::GetInteger(0,10);
+
+        if (pazymys == 0) break;
+        else
+        {
+            a.pazymiai.push_back(pazymys);
+            j++;
+        }
+    }
+
+    std::cout << "Egzamino rezultatai: ";
+    a.egz = Console::GetInteger(1,10);
+    std::cout << std::endl;
+
+    std::cout << "Pasirinkite skaiciuoti su mediana (1), vidurkiu (2), arba su abiem (3): ";
+    a.Med_ar_Vid = Console::GetInteger(1,3);
+
+    a.Calculate_suMediana();
+    a.Calculate_suVidurkiu();
+    
+    return in;
+}
+
+std::ostream& operator << (std::ostream& out, student &a)
+{
+    out << a.getFirstName() << " ";
+    out << a.getLastName() << " ";
+    out << a.get_egz() << " ";
+    
+    for (int i=1; i <= a.pazymiai.size(); i++)
+    {
+        out << a.get_mark[i] << " ";
+    }
+
+    out << a.getFinale_suVidurkiu();
+    out << a.getFinale_suMediana();
+
+    return out;
 }
