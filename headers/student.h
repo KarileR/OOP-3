@@ -45,6 +45,16 @@ class student
         bool setCorrectData(bool x);
         bool getCorrectData();
 
+        friend bool operator > (const student &a, const student &b);
+        friend bool operator < (const student &a, const student &b);
+        friend bool operator >= (const student &a, const student &b);
+        friend bool operator <= (const student &a, const student &b);
+        friend bool operator == (const student &a, const student &b);
+        friend bool operator != (const student &a, const student &b);
+
+        friend std::istream& operator >> (std::istream& in, student &a);
+        friend std::ostream& operator << (std::ostream& out, student &a);
+        
 };
 
 bool Compare_by_Results(const student &a, const student &b);
