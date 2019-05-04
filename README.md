@@ -10,6 +10,7 @@ __Programos naudojimosi instrukcija__
 # v1.5
 __Pridėta:__
 - Bazinė klasė "Person"
+
 __Koreguota:__
 - Student klasės išvedimo operatorius ">>"
 
