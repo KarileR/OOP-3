@@ -7,6 +7,12 @@ __Programos naudojimosi instrukcija__
     - Trečia: Pasirinkti įvesti duomenis ranka programos veikimo metu
 2. Po kiekvieno pasirinkimo sekate nurodymus, ką reikia daryti toliau. Jei išmeta klaidą,  ji bus aprašyta, kodėl taip įvyko
 
+# v1.5
+__Pridėta:__
+- Bazinė klasė "Person"
+__Koreguota:__
+- Student klasės išvedimo operatorius ">>"
+
 # v1.2
 __Pridėta:__
 - Realizuoti operatoriai 'student' klasei
