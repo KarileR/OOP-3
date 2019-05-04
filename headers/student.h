@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "person.h"
+#include "../headers/person.h" 
 
 class student : public Person
 {
