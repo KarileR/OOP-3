@@ -13,22 +13,6 @@ student::student()
 }
 
 
-void student::setFirstName(std::string x){
-    FirstName = x;
-}
-std::string student::getFirstName()const{
-    return FirstName;
-}
-
-
-void student::setLastName(std::string x){
-    LastName = x;
-}
-std::string student::getLastName()const{
-    return LastName;
-}
-
-
 void student::set_egz(int exam_mark){
     egz = exam_mark;
 }       
@@ -151,10 +135,10 @@ std::istream& operator >> (std::istream& in, student &a)
 {
 
     std::cout << "Vardas: "; 
-    in >> a.FirstName;
+    string name; in >> name; a.setFirstName(name);
 
     std::cout << "Pavarde: ";
-    in >> a.LastName;
+    string sname; in >> sname; a.setLastName(sname);
     
     std::cout << std::endl;
     
@@ -195,7 +179,7 @@ std::ostream& operator << (std::ostream& out, student &a)
     
     for (int i=1; i <= a.pazymiai.size(); i++)
     {
-        out << a.get_mark[i] << " ";
+        out << a.get_mark(i) << " ";
     }
 
     out << a.getFinale_suVidurkiu();
