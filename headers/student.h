@@ -4,12 +4,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "person.h"
 
-class student
+class student : public Person
 {
     private:
-        std::string FirstName;
-        std::string LastName;
         std::vector <int> pazymiai;
         int egz;
         double Finale_suVidurkiu;
@@ -20,11 +19,8 @@ class student
     public:
         student();
 
-        void setFirstName(std::string x);
-        std::string getFirstName()const;
-
-        void setLastName(std::string x);
-        std::string getLastName()const;
+        student(string a, string b):
+            Person(a, b) {};
 
         void set_egz(int exam_mark);
         int get_egz()const;
