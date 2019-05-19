@@ -2,10 +2,13 @@
 #include "../headers/console.h"
 #include "../headers/functions.h"
 #include "../headers/globals.h"
+//#include "../headers/vector.h"
+
+
 
 std::string ListNR;
 
-void InsertYourself(list <student> &A)
+void InsertYourself(Vector <student> &A)
 {
         cout << "Iveskite mokiniu skaiciu: ";
         int sk = Console::GetInteger(1,imax);
@@ -21,13 +24,13 @@ void InsertYourself(list <student> &A)
         }
 }
 
-void PrintData(list <student> A)
+void PrintData(Vector <student> &A)
 {
         int num = 0; int num2 = 20; bool co = true;
         num = GetLongestString(A) + 7;
 
-        A.sort(Compare_by_FirstName);
-        //std::sort(A.begin(), A.end(), Compare_by_FirstName);
+        //A.sort(Compare_by_FirstName);
+        std::sort(A.begin(), A.end(), Compare_by_FirstName);
 
         cout << endl;
         cout<< left << setfill(' ') << setw(num) << "Pavarde";
@@ -78,14 +81,23 @@ void PrintData(list <student> A)
         if (co == false) cout <<"It seems you have written wrong data. Please check again your data file" << endl;
 }
 
-void GroupStudents(list <student> &A)
+void GroupStudents(Vector <student> &A)
 {
-    A.sort(Compare_by_Results);
-    //std::sort(A.begin(), A.end(), Compare_by_Results);
+    //A.sort(Compare_by_Results);
+    std::sort(A.begin(), A.end(), Compare_by_Results);
 
-    list <student>::iterator it = std::stable_partition (A.begin(), A.end(), Ar_Islaike);
-    list <student> Weak (it, A.end());
-    A.erase(it, A.end());
+    //Vector <student>::iterator it = std::stable_partition (A.begin(), A.end(), Ar_Islaike);
+    //Vector <student> Weak (it, A.end());
+    //A.erase(it, A.end());
+
+    Vector <student> Weak;
+    Vector <student> Strong;
+
+    for(auto &i : A)
+    {
+        if(i.getFinale_suVidurkiu() >= 5) Weak.push_back(i);
+        else (Strong.push_back(i));
+    }
 
     std::ofstream write1("../GeneratedLists/" + ListNR + "/kietiakai.txt");
     std::ofstream write2("../GeneratedLists/" + ListNR + "/vargsiukai.txt");
@@ -120,7 +132,7 @@ void GroupStudents(list <student> &A)
     write1 << bruksnys << endl;
     write2 << bruksnys << endl;
 
-    for(auto &u : A)
+    for(auto &u : Weak)
     {
         write1 << left << setfill(' ')<< setw(num) << u.getLastName();
         write1 << left << setfill(' ')<< setw(num) << u.getFirstName();
@@ -136,7 +148,7 @@ void GroupStudents(list <student> &A)
     }
 
 
-    for(auto &i : Weak)
+    for(auto &i : Strong)
     {
         write2 << left << setfill(' ')<< setw(num) << i.getLastName();
         write2 << left << setfill(' ')<< setw(num) << i.getFirstName();
@@ -159,7 +171,7 @@ void GroupStudents(list <student> &A)
 }
 
 
-void ReadFromFile(list <student> &A)
+void ReadFromFile(Vector <student> &A)
 {
     string FirstName;
     string LastName;
@@ -288,7 +300,7 @@ void GenerateList(int StudSK)
 }
 
 
-void InsertFromFile(list <student> &A)
+void InsertFromFile(Vector <student> &A)
 {
     std::ifstream read("../data/kursiokai.txt");
      
@@ -362,7 +374,7 @@ void InsertFromFile(list <student> &A)
     read.close();
 }
 
-int GetLongestString(list <student> &A) 
+int GetLongestString(Vector <student> &A) 
 {
     int ln=0, max=0;
     for(auto &i: A)

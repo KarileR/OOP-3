@@ -4,13 +4,14 @@
 #include "../headers/functions.h"
 #include "../headers/timer.h"
 #include "../headers/globals.h"
+#include "../headers/vector.h"
 
 int main(int argc, const char * argv[]) 
 {
     Timer clock1;
     auto h2 = clock1.elapsed(); 
 
-    list <student> A;
+    Vector <student> A;
 
     cout << "Paspausti atitinkamus skaicius, jeigu norite:" << endl << endl;
     cout << "1. Sukelti duomenis is esamo failo" << endl;

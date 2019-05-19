@@ -1,5 +1,6 @@
 #include "../headers/student.h"
 #include "../headers/console.h"
+#include "../headers/vector.h"
 
 
 
