@@ -20,6 +20,7 @@
 #include <iterator>
 #include <limits>
 #include <sys/stat.h>
+#include "../headers/vector.h"
 
 using std::cout;
 using std::cin;
@@ -31,12 +32,12 @@ using std::list;
 using std::string;
 
 
-void InsertYourself(list <student> &A);
-void PrintData(list <student> A);
-void GroupStudents(list <student> &A);
-void ReadFromFile(list <student> &A);
+void InsertYourself(Vector <student> &A);
+void PrintData(Vector <student> &A);
+void GroupStudents(Vector <student> &A);
+void ReadFromFile(Vector <student> &A);
 void GenerateList(int StudSK);
-void InsertFromFile(list <student> &A);
-int GetLongestString(list <student> &A);
+void InsertFromFile(Vector <student> &A);
+int GetLongestString(Vector <student> &A);
 
 #endif
