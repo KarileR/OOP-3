@@ -7,6 +7,19 @@ __Programos naudojimosi instrukcija__
     - Trečia: Pasirinkti įvesti duomenis ranka programos veikimo metu
 2. Po kiekvieno pasirinkimo sekate nurodymus, ką reikia daryti toliau. Jei išmeta klaidą,  ji bus aprašyta, kodėl taip įvyko
 
+# v2.0
+__Pridėta:__
+- Realizuoti Unit Testai 
+- Sukurkurta dokumentacija panaudojant Doxygen
+- Atlikita spartos analizė: palyginta kiek laiko užtrunka programos veikimas, naudojant std::vector<> ir Vector<> realizacijas, generuojant 100000 studentų įrašų
+
+__Spartos analizė:__
+
+| Studentu sk | Vector <> | std::vector<> |
+| --- | --- | --- |
+| 100000 |  5.096263 s   |  12.386414 s     | 
+
+
 # v1.5
 __Pridėta:__
 - Bazinė klasė "Person"
